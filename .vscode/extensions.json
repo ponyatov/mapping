@@ -13,6 +13,8 @@
         "ms-vscode.cmake-tools",
         // flex/bison
         "daohong-emilio.yash",
+        // Qt
+        "tonka3000.qtvsctools",
         // // LLVM
         // "rreverser.llvm",
         // "basdp.language-gas-x86",

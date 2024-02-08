@@ -30,8 +30,8 @@ MAPMAP_GZ = $(MAPMAP).tar.gz
 
 # all
 .PHONY: all
-all: bin/$(MODULE) lib/$(MODULE).ini
-	$^
+all: $(REF)/$(MAPMAP)/mapmap.pro
+	cd $(REF)/$(MAPMAP) ; qmake $<
 
 # format
 format: tmp/format_cpp
@@ -60,9 +60,9 @@ update:
 gz: \
 	ref
 ref: \
-	$(REF)/$(MAPMAP)/README.md
+	$(REF)/$(MAPMAP)/mapmap.pro
 
-$(REF)/$(MAPMAP)/README.md: $(GZ)/$(MAPMAP_GZ)
+$(REF)/$(MAPMAP)/mapmap.pro: $(GZ)/$(MAPMAP_GZ)
 	cd ref ; tar zx < $< && touch $@
 
 $(GZ)/$(MAPMAP_GZ):
