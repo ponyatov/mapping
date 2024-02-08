@@ -1,0 +1,4 @@
+git make curl
+code meld doxygen clang-format
+g++ build-essential cmake
+qtbase5-dev qtbase5-dev-tools

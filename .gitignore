@@ -1,0 +1,9 @@
+*~
+*.swp
+*.log
+/docs/
+
+.qmake.stash
+*.mk
+
+!.gitignore
