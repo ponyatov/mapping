@@ -58,8 +58,12 @@ update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
 gz: \
-	$(GZ)/$(MAPMAP_GZ)
-ref:
+	ref
+ref: \
+	$(REF)/$(MAPMAP)/README.md
+
+$(REF)/$(MAPMAP)/README.md: $(GZ)/$(MAPMAP_GZ)
+	cd ref ; tar zx < $< && touch $@
 
 $(GZ)/$(MAPMAP_GZ):
 	$(CURL) $@ https://github.com/mapmapteam/mapmap/archive/refs/tags/$(MAPMAP_VER).tar.gz
